@@ -1,14 +1,22 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-    <title>Ramchandra Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramchandra GK Quiz</title>
     <style>
-        body { margin: 0; font-family: Arial; background: #f0f2f5; }
-        .navbar { background: #1877f2; color: white; padding: 15px; font-size: 22px; }
-        .profile { background: white; width: 300px; margin: 50px auto; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px #ccc; text-align: center; }
-        .profile img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #1877f2; }
-        .btn { background: #1877f2; color: white; padding: 10px; border: none; margin-top: 10px; width: 100%; border-radius: 5px; cursor: pointer; }
-        .footer { margin-top: 50px; background: #ddd; padding: 10px; text-align: center; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f0f2f5; text-align: center; }
+        .navbar { background: #1877f2; color: white; padding: 15px; font-size: 22px; text-align: left; }
+        .profile { background: white; width: 350px; margin: 30px auto; padding: 20px; border-radius: 15px; box-shadow: 0px 5px 15px rgba(0,0,0,0.1); }
+        .profile img { width: 100px; height: 100px; border-radius: 50%; border: 3px solid #1877f2; }
+        .quiz-container { background: white; width: 350px; margin: 20px auto; padding: 20px; border-radius: 15px; box-shadow: 0px 5px 15px rgba(0,0,0,0.1); }
+        .question { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #333; }
+        .option { display: block; background: #e4e6eb; margin: 10px 0; padding: 12px; border-radius: 8px; cursor: pointer; transition: 0.3s; border: none; width: 100%; font-size: 16px; }
+        .option:hover { background: #d8dadf; }
+        .correct { background: #42b72a !important; color: white; }
+        .wrong { background: #fa3e3e !important; color: white; }
+        .btn { background: #1877f2; color: white; padding: 10px; border: none; margin-top: 10px; width: 100%; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .footer { margin-top: 30px; background: #ddd; padding: 15px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -18,21 +26,42 @@
 <div class="profile">
     <img src="myphoto.jpg" alt="Ramchandra Photo">
     <h2>Ramchandra</h2>
-    <p>Python Learner | Website Developer</p>
-
+    <p style="color: #666;">Rajasthan Exam Prep | Python Learner</p>
     <a href="https://wa.me/917851061727" target="_blank" style="text-decoration: none;">
         <button class="btn">Contact Me</button>
     </a>
-    <button class="btn">My Projects</button>
+</div>
 
-    <div style="text-align: left; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
-        <h3>मेरे बारे में</h3>
-        <p style="font-size: 14px; color: #555;">
-            नमस्ते! मेरा नाम रामचंद्र है। मैं राजस्थान सरकारी परीक्षाओं की तैयारी कर रहा हूँ और पायथन सीख रहा हूँ।
-        </p>
+<div class="quiz-container">
+    <h3 style="color: #1877f2; border-bottom: 2px solid #1877f2; padding-bottom: 10px;">Rajasthan GK Quiz</h3>
+    <div id="quiz-box">
+        <p class="question" id="ques">1. राजस्थान का राज्य पशु कौन सा है?</p>
+        <button class="option" onclick="check(this, false)">शेर</button>
+        <button class="option" onclick="check(this, true)">ऊंट / चिंकारा</button>
+        <button class="option" onclick="check(this, false)">हाथी</button>
+        <button class="option" onclick="check(this, false)">बाघ</button>
     </div>
+    <p id="msg" style="margin-top: 15px; font-weight: bold;"></p>
 </div>
 
 <div class="footer">© 2026 Ramchandra</div>
+
+<script>
+    function check(btn, isCorrect) {
+        let options = document.querySelectorAll('.option');
+        options.forEach(opt => opt.disabled = true); // एक बार क्लिक के बाद बटन बंद
+
+        if (isCorrect) {
+            btn.classList.add('correct');
+            document.getElementById('msg').innerHTML = "✅ सही जवाब!";
+            document.getElementById('msg').style.color = "green";
+        } else {
+            btn.classList.add('wrong');
+            document.getElementById('msg').innerHTML = "❌ गलत जवाब! सही जवाब 'ऊंट / चिंकारा' है।";
+            document.getElementById('msg').style.color = "red";
+        }
+    }
+</script>
+
 </body>
 </html>
