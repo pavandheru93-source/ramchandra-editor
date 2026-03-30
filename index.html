@@ -75,10 +75,23 @@
                 document.getElementById("next-btn").style.display = "block";
             };
             container.appendChild(btn);
-        });
-    }
+        let correctCount = 0; // सही जवाब गिनने के लिए
 
-    function nextQuestion() {
+function nextQuestion() {
+    currentIdx++;
+    if (currentIdx < questions.length) {
+        loadQuestion();
+    } else {
+        // यहाँ स्कोर दिखेगा
+        document.getElementById("quiz-box").innerHTML = `
+            <div style="text-align:center;">
+                <h2>🎊 क्विज़ पूरा हुआ!</h2>
+                <p style="font-size: 22px;">आपका स्कोर: <b>${correctCount} / ${questions.length}</b></p>
+                <button class="btn" onclick="location.reload()">फिर से शुरू करें</button>
+            </div>`;
+        document.getElementById("next-btn").style.display = "none";
+    }
+} {
         currentIdx++;
         if (currentIdx < questions.length) loadQuestion();
         else document.getElementById("quiz-box").innerHTML = "<h2>🎊 क्विज़ पूरा हुआ!</h2>";
