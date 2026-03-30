@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="hi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramchandra Website</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             background: #f0f2f5;
         }
 
@@ -14,68 +16,90 @@
             color: white;
             padding: 15px;
             font-size: 22px;
+            text-align: left;
         }
 
         .navbar span {
             font-weight: bold;
         }
 
-        .container {
-            text-align: center;
-            padding: 50px;
-        }
-
         .profile {
             background: white;
-            width: 300px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px #ccc;
+            width: 320px;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         .profile img {
-            width: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1877f2;
         }
 
         .btn {
             background: #1877f2;
             color: white;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            margin-top: 10px;
+            margin-top: 15px;
             width: 100%;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         .btn:hover {
             background: #166fe5;
         }
 
+        .about-section {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
         .footer {
             margin-top: 50px;
             background: #ddd;
-            padding: 10px;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
-
 <body>
 
 <div class="navbar">
     Welcome <span>Ramchandra</span>
 </div>
 
-<div class="container">
-    <div class="profile">
-        <img src="myphoto.jpg" alt="Ramchandra Photo">
-        <h2>Ramchandra</h2>
-        <p>Python Learner | Website Developer</p>
+<div class="profile">
+    <img src="myphoto.jpg" alt="Ramchandra Photo">
+    
+    <h2>Ramchandra</h2>
+    <p style="color: #666;">Python Learner | Website Developer</p>
 
+    <a href="https://wa.me/917851061727" target="_blank" style="text-decoration: none;">
         <button class="btn">Contact Me</button>
-        <button class="btn">My Projects</button>
+    </a>
+
+    <button class="btn">My Projects</button>
+
+    <div class="about-section">
+        <h3 style="color: #333; margin-bottom: 10px;">मेरे बारे में (About Me)</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 14px; margin: 0;">
+            नमस्ते! मेरा नाम <b>रामचंद्र</b> है। मैं वर्तमान में राजस्थान सरकार की प्रतियोगी परीक्षाओं (Rajasthan Exams) की तैयारी कर रहा हूँ। 
+            इसके साथ ही, मुझे तकनीक और कोडिंग में बहुत रुचि है, इसलिए मैं खाली समय में <b>Python Programming</b> सीख रहा हूँ। 
+            यह मेरी पहली वेबसाइट है जिसे मैंने खुद कोड किया है!
+        </p>
     </div>
 </div>
 
